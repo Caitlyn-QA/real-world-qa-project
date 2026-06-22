@@ -1,8 +1,8 @@
 # HT-101 — Add One Product to the Shopping Cart
-**Related User Story:** HT-101
-**Related QA Task:** QA-101
-**Analysis Status:** Complete — ready for exploratory testing
 
+**Related User Story:** [HT-101 — Add one product to the shopping cart](https://github.com/Caitlyn-QA/real-world-qa-project/issues/2)  
+**Related QA Task:** [QA-101 — Analyse and test HT-101](https://github.com/Caitlyn-QA/real-world-qa-project/issues/3)  
+**Analysis Status:** Complete — ready for exploratory testing
 
 ## Requirement Summary
 
@@ -50,9 +50,9 @@ Unavailable-product behaviour and maximum-quantity or stock-limit validation are
 
 During the standard add-to-cart flow, QA will still guard against the following incorrect outcomes:
 
-* An unrelated product is added to the cart.
-* The cart indicator displays an incorrect quantity.
-* The cart displays a product name or price that differs from the selected product.
+- An unrelated product is added to the cart.
+- The cart indicator displays an incorrect quantity.
+- The cart displays a product name or price that differs from the selected product.
 
 ### Edge Cases
 
@@ -80,8 +80,10 @@ The following test data is required for HT-101:
 - A known empty-cart state before each test begins.
 - A valid customer account for authenticated-user coverage.
 - A guest browser session for guest-user coverage.
-- A product with a decimal price for price-accuracy checks.
-- A product with a longer name for display and identity checks.
+- If suitable staging data is available, a product with a decimal price for price-accuracy checks.
+- If suitable staging data is available, a product with a longer name for display and identity checks.
+
+These two data variations are exploratory opportunities and will not block completion of HT-101 if matching products are unavailable in staging.
 
 Where possible, product information should be captured dynamically from the application rather than hardcoded into the test.
 
@@ -163,7 +165,7 @@ Automation should be tracked through a separate Automation Task linked to HT-101
 
 The following behaviour is outside the scope of HT-101:
 
-- Adding the same product multiple times
+- Adding the same product multiple times. Although the expected behaviour was confirmed during refinement, repeated-addition testing belongs to a separate cart-quantity story.
 - Adding different products to the cart
 - Updating product quantity
 - Maximum quantity and stock-limit validation
