@@ -1,6 +1,6 @@
 # Real-World QA Project
 
-> **Status: In progress — Project setup and Sprint 1 planning**
+**Status: In progress — Sprint 1 feature testing**
 
 ## Overview
 
@@ -9,6 +9,12 @@ This is an evolving end-to-end QA project designed to simulate how a QA Engineer
 Instead of practising testing tools through isolated exercises, this project follows a realistic delivery process using user stories, acceptance criteria, exploratory testing, test automation, defect reporting, Git workflows, continuous integration, regression testing and release-quality assessment.
 
 The project will grow through a series of two-week sprints.
+
+## Start Here
+
+New to company-style QA delivery?
+
+Read the [Project Reviewer Guide](reviewer-guide.md) for a beginner-friendly walkthrough of what was created, in which order, and why each part exists in a realistic software delivery process.
 
 ## Fictional Company
 
