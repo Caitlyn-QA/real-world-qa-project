@@ -230,7 +230,61 @@ HT-101 and QA-101 remained open and **In Progress** because only the analysis de
 
 **Why:** A merged document does not mean the whole User Story is finished. Live status must reflect the complete delivery state, not just one completed artifact.
 
----
+### Step 15 - Perform the guest-customer exploratory session
+
+A separate branch was created:
+
+```text
+qa/QA-101-exploratory-testing
+```
+
+The session evidence was recorded in:
+
+- **[Guest cart exploratory-testing record](docs/exploratory-testing/HT-101-cart-exploration.md)**
+
+The session investigated whether a guest customer could add one available product to an empty cart. It covered the cart indicator, product identity, price, initial quantity and same-session refresh persistence.
+
+The completed evidence was reviewed and merged through:
+
+- **[Pull Request #7 — Document HT-101 guest cart exploration](https://github.com/Caitlyn-QA/real-world-qa-project/pull/7)**
+
+All acceptance criteria covered by the guest session passed. No defects were identified, but authenticated-customer behaviour remained an open risk.
+
+**Why:** Exploratory testing checks what the application actually does before automation is written. Recording the charter, conditions, observations and remaining risk makes the session reproducible and reviewable rather than informal clicking.
+
+### Step 16 - Perform the authenticated-customer exploratory session
+
+A second branch was created:
+
+```text
+qa/QA-101-authenticated-cart-exploration
+```
+
+The authenticated session was recorded in:
+
+- **[Authenticated cart exploratory-testing record](docs/exploratory-testing/HT-101-authenticated-cart-exploration.md)**
+
+The same `Pliers` product and `$12.01` price were used so that the customer state was the main variable being compared.
+
+The session used the documented Jane Doe test account and checked the complete add-to-cart journey while signed in. The evidence was reviewed and merged through:
+
+- **[Pull Request #8 - Document HT-101 authenticated cart exploration](https://github.com/Caitlyn-QA/real-world-qa-project/pull/8)**
+
+The authenticated journey matched the completed guest journey for product addition, confirmation, cart indicator, product details, initial quantity and refresh persistence.
+
+**Why:** The acceptance criteria required consistent behaviour for guest and authenticated customers. A separate comparison session provided direct evidence instead of assuming that both customer states behaved identically.
+
+### Step 17 - Complete the exploratory-testing milestone
+
+After both sessions were merged:
+
+- QA-101 was updated with the results and evidence links.
+- Pull Requests #7 and #8 moved to **Done**.
+- All confirmed HT-101 acceptance criteria had passed exploratory testing in Chromium.
+- No defects were identified.
+- HT-101 and QA-101 remained **In Progress** because automation planning and the final QA completion steps were still outstanding.
+
+**Why:** Completing exploratory testing is an important milestone, but it does not automatically complete the entire User Story. The live status must continue to reflect the remaining delivery work.
 
 ## 4. Why the information lives in different places
 
@@ -273,23 +327,26 @@ A strong QA Engineer does not silently invent missing business rules. QA identif
 A reviewer can follow this order:
 
 1. Read the repository `README.md` for the project purpose and current stage.
-2. Read `docs/project/project-overview.md` for product and business context.
-3. Read `docs/project/workflow.md`, `definition-of-ready.md` and `definition-of-done.md` for the working agreements.
-4. Open HT-101 to see the requirement, refinement questions, Product Owner decisions and QA status.
-5. Open QA-101 to see the visible QA scope and progress.
-6. Read the HT-101 test-analysis document to see the risk-based testing approach.
-7. Open Pull Request #4 to see the branch, review feedback, revision, approval and merge history.
-8. View the GitHub Project to compare the live status with the repository evidence.
+2. Read `docs/project/project-overview.md` for the fictional company, product and business context.
+3. Read `docs/project/workflow.md`, `definition-of-ready.md` and `definition-of-done.md` for the team’s working agreements.
+4. Open HT-101 to see the requirement, acceptance criteria, QA refinement questions, Product Owner decisions and current status.
+5. Open QA-101 to see the visible QA scope, progress updates and links to testing evidence.
+6. Read `docs/test-analysis/HT-101-add-one-product.md` to see the risk-based testing approach created before execution.
+7. Open Pull Request #4 to see the test-analysis review, requested changes, revision, approval and merge history.
+8. Read `docs/exploratory-testing/HT-101-cart-exploration.md` for the guest-customer session.
+9. Read `docs/exploratory-testing/HT-101-authenticated-cart-exploration.md` for the authenticated-customer session and direct comparison with the guest journey.
+10. Open Pull Requests #7 and #8 to see how the exploratory evidence was reviewed and merged.
+11. View the Harbour Tools QA Delivery Project to confirm that the live status matches the completed and remaining work.
 
-The important question is not only, "Are there tests?" It is also:
+The important question is not only, “Are there tests?” It is also:
 
-> Can I follow why the tests exist, what requirement they cover, what risks were considered, who clarified uncertainty, how the work was reviewed and what remains unfinished?
+> Can I follow how the project was established, how the requirement became ready, what risks were identified, what the application actually did, how the evidence was reviewed and what work still remains?
 
 ---
 
 ## 7. The traceability chain for HT-101
 
-```text
+````text
 Customer need
 -> HT-101 User Story
 -> QA refinement questions
@@ -298,17 +355,19 @@ Customer need
 -> QA-101 sub-task
 -> HT-101 test analysis
 -> qa/QA-101-test-analysis branch
--> commits
 -> Pull Request #4
--> QA Lead review feedback
--> revision and approval
--> merge to main
--> exploratory testing next
-```
+-> review feedback, revision and approval
+-> guest exploratory-testing session
+-> qa/QA-101-exploratory-testing branch
+-> Pull Request #7
+-> authenticated exploratory-testing session
+-> qa/QA-101-authenticated-cart-exploration branch
+-> Pull Request #8
+-> guest and authenticated behaviour compared
+-> all confirmed acceptance criteria passed
+-> automation planning next
 
-This traceability is valuable because a reviewer can move from a business need to the exact QA thinking and delivery evidence associated with it.
-
----
+This traceability is valuable because a reviewer can follow the work from the original customer need through requirement clarification, risk analysis, manual testing, review and the evidence supporting the current QA outcome.
 
 ## 8. What the project demonstrates about QA work
 
@@ -352,7 +411,7 @@ Exploratory charter
 -> pull-request review and CI evidence
 -> regression assessment
 -> final QA summary
-```
+````
 
 The project should not create all of these artifacts in advance. Each one should be added when the work genuinely reaches that stage.
 
