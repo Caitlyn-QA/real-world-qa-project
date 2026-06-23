@@ -33,17 +33,17 @@ Business need
 
 Each stage answers a different question:
 
-| Stage | Main question |
-|---|---|
-| Business need | Why does this feature matter? |
-| User Story | What should the customer be able to do? |
-| Refinement | Is the expected behaviour clear enough? |
-| Definition of Ready | Can meaningful work begin without dangerous assumptions? |
-| Test analysis | What risks and behaviours need to be investigated? |
-| Testing | What does the product actually do? |
-| Defect reporting | What failed, and what evidence proves it? |
-| Automation | Which stable, valuable checks should run repeatedly? |
-| QA completion | What passed, what remains risky, and is the story ready to finish? |
+| Stage               | Main question                                                      |
+| ------------------- | ------------------------------------------------------------------ |
+| Business need       | Why does this feature matter?                                      |
+| User Story          | What should the customer be able to do?                            |
+| Refinement          | Is the expected behaviour clear enough?                            |
+| Definition of Ready | Can meaningful work begin without dangerous assumptions?           |
+| Test analysis       | What risks and behaviours need to be investigated?                 |
+| Testing             | What does the product actually do?                                 |
+| Defect reporting    | What failed, and what evidence proves it?                          |
+| Automation          | Which stable, valuable checks should run repeatedly?               |
+| QA completion       | What passed, what remains risky, and is the story ready to finish? |
 
 ---
 
@@ -174,7 +174,7 @@ qa/QA-101-test-analysis
 
 The document was added at:
 
-- **[`docs/test-analysis/HT-101-add-one-product.md`](../test-analysis/HT-101-add-one-product.md)**
+**[docs/test-analysis/HT-101-add-one-product.md](docs/test-analysis/HT-101-add-one-product.md)**
 
 It records:
 
@@ -188,7 +188,7 @@ It records:
 - Automation recommendation
 - Out-of-scope behaviour
 
-**Why:** Test analysis answers *what needs to be proven and why* before detailed execution begins. It prevents the test from becoming a collection of clicks without a clear risk-based purpose.
+**Why:** Test analysis answers _what needs to be proven and why_ before detailed execution begins. It prevents the test from becoming a collection of clicks without a clear risk-based purpose.
 
 ### Step 10 - Commit and push the work
 
@@ -236,17 +236,17 @@ HT-101 and QA-101 remained open and **In Progress** because only the analysis de
 
 The project follows a one-source-of-truth principle:
 
-| Information | Primary location | Why |
-|---|---|---|
-| Product requirement and acceptance criteria | User Story Issue | Keeps expected behaviour visible and current |
-| Questions and business decisions | Issue comments | Preserves who clarified what and why |
-| Live workflow status | GitHub Project | Supports backlog and sprint tracking |
-| Detailed QA reasoning | Repository Markdown | Creates durable, version-controlled evidence |
-| Review feedback and approval | Pull request | Preserves the formal review cycle |
-| Defect evidence | Bug Issue | Gives each failure ownership, priority and retest history |
-| Automated checks | Test code | Provides repeatable regression coverage |
-| Execution results | GitHub Actions | Shows whether automated checks passed in CI |
-| Final QA outcome | User Story / QA task | Communicates coverage, remaining risk and recommendation |
+| Information                                 | Primary location     | Why                                                       |
+| ------------------------------------------- | -------------------- | --------------------------------------------------------- |
+| Product requirement and acceptance criteria | User Story Issue     | Keeps expected behaviour visible and current              |
+| Questions and business decisions            | Issue comments       | Preserves who clarified what and why                      |
+| Live workflow status                        | GitHub Project       | Supports backlog and sprint tracking                      |
+| Detailed QA reasoning                       | Repository Markdown  | Creates durable, version-controlled evidence              |
+| Review feedback and approval                | Pull request         | Preserves the formal review cycle                         |
+| Defect evidence                             | Bug Issue            | Gives each failure ownership, priority and retest history |
+| Automated checks                            | Test code            | Provides repeatable regression coverage                   |
+| Execution results                           | GitHub Actions       | Shows whether automated checks passed in CI               |
+| Final QA outcome                            | User Story / QA task | Communicates coverage, remaining risk and recommendation  |
 
 Duplicating the same information everywhere creates conflicting versions. Linking related artifacts gives traceability without unnecessary repetition.
 
@@ -254,13 +254,13 @@ Duplicating the same information everywhere creates conflicting versions. Linkin
 
 ## 5. Roles and decision ownership
 
-| Role | Main responsibility in this project |
-|---|---|
-| Product Owner - Paul | Defines business value, priority and expected product behaviour |
-| Frontend Developer - Michael | Implements and explains browser-facing behaviour |
-| Backend Developer - Josh | Implements and explains API, data and server-side behaviour |
-| QA Lead - Ange | Reviews QA direction, risk coverage and quality of evidence |
-| QA Engineer - Caitlyn | Questions requirements, analyses risk, designs and performs testing, raises defects and communicates QA status |
+| Role                         | Main responsibility in this project                                                                            |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Product Owner - Paul         | Defines business value, priority and expected product behaviour                                                |
+| Frontend Developer - Michael | Implements and explains browser-facing behaviour                                                               |
+| Backend Developer - Josh     | Implements and explains API, data and server-side behaviour                                                    |
+| QA Lead - Ange               | Reviews QA direction, risk coverage and quality of evidence                                                    |
+| QA Engineer - Caitlyn        | Questions requirements, analyses risk, designs and performs testing, raises defects and communicates QA status |
 
 A strong QA Engineer does not silently invent missing business rules. QA identifies the gap, asks the correct owner and records the answer so the whole team can work from the same expectation.
 
@@ -360,21 +360,21 @@ The project should not create all of these artifacts in advance. Each one should
 
 ## 10. Beginner glossary
 
-| Term | Meaning in this project |
-|---|---|
-| User Story | A small description of customer value and expected behaviour |
-| Acceptance Criteria | Observable conditions used to decide whether the story behaves as required |
-| Refinement | Team discussion that clarifies scope, behaviour, risks and dependencies |
-| Definition of Ready | Conditions that must be sufficiently satisfied before meaningful work begins |
-| Definition of Done | Conditions needed before the team treats work as genuinely complete |
-| Test Condition | A behaviour or risk that needs to be investigated or proven |
-| Exploratory Testing | Simultaneous learning, test design and execution guided by a clear charter |
-| Branch | A separate line of work that protects approved content on `main` |
-| Commit | A named saved point in the repository history |
-| Pull Request | A proposal to review and merge branch changes into the approved codebase |
-| Regression | Checking that a change has not damaged important existing behaviour |
-| Traceability | The ability to connect requirements, decisions, tests, defects and results |
-| CI | Automated execution triggered by repository changes, later provided by GitHub Actions |
+| Term                | Meaning in this project                                                               |
+| ------------------- | ------------------------------------------------------------------------------------- |
+| User Story          | A small description of customer value and expected behaviour                          |
+| Acceptance Criteria | Observable conditions used to decide whether the story behaves as required            |
+| Refinement          | Team discussion that clarifies scope, behaviour, risks and dependencies               |
+| Definition of Ready | Conditions that must be sufficiently satisfied before meaningful work begins          |
+| Definition of Done  | Conditions needed before the team treats work as genuinely complete                   |
+| Test Condition      | A behaviour or risk that needs to be investigated or proven                           |
+| Exploratory Testing | Simultaneous learning, test design and execution guided by a clear charter            |
+| Branch              | A separate line of work that protects approved content on `main`                      |
+| Commit              | A named saved point in the repository history                                         |
+| Pull Request        | A proposal to review and merge branch changes into the approved codebase              |
+| Regression          | Checking that a change has not damaged important existing behaviour                   |
+| Traceability        | The ability to connect requirements, decisions, tests, defects and results            |
+| CI                  | Automated execution triggered by repository changes, later provided by GitHub Actions |
 
 ---
 
