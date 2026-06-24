@@ -19,6 +19,7 @@ export default defineConfig({
   use: {
     baseURL: 'https://practicesoftwaretesting.com/',
     trace: 'on-first-retry',
+    testIdAttribute: 'data-test'
   },
 
   projects: [
