@@ -1,0 +1,26 @@
+{
+  "name": "real-world-qa-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright automation foundation for the Harbour Tools QA delivery project.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caitlyn-QA/real-world-qa-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Caitlyn-QA/real-world-qa-project/issues"
+  },
+  "homepage": "https://github.com/Caitlyn-QA/real-world-qa-project#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3"
+  }
+}
