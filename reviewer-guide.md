@@ -12,6 +12,8 @@ The goal is not to present a perfect finished project from the beginning. Eviden
 
 **Repository:** [Caitlyn-QA/real-world-qa-project](https://github.com/Caitlyn-QA/real-world-qa-project)
 
+> **Status: Sprint 1 complete — Cart Reliability validated through exploratory testing and Playwright automation**
+
 ---
 
 ## 1. The simplest way to understand the project
@@ -76,7 +78,7 @@ Delivery evidence proves how the work was performed. It includes:
 - Pull-request review history
 - Test analysis and exploratory notes
 - Defects and retest evidence
-- Automated tests and CI results later in the project
+- Automated tests and execution results
 
 This separation is important. A requirement, a QA task and the evidence of completing that task are related, but they are not the same thing.
 
@@ -286,6 +288,84 @@ After both sessions were merged:
 
 **Why:** Completing exploratory testing is an important milestone, but it does not automatically complete the entire User Story. The live status must continue to reflect the remaining delivery work.
 
+### Step 18 - Establish the Playwright foundation
+
+The project created AUTO-100 to establish a reliable Playwright and TypeScript test foundation.
+
+The work introduced:
+
+- Playwright configuration
+- Chromium execution
+- TypeScript validation
+- HTML reporting
+- trace collection on the first retry
+- a foundation smoke test
+- ignored test results and generated reports
+
+The completed foundation was reviewed and merged through:
+
+- **Pull Request #10 - Establish Playwright test foundation**
+
+**Why:** Automation should be built on an intentional and repeatable foundation rather than adding isolated test files without shared configuration or validation.
+
+### Step 19 - Automate the guest add-to-cart journey
+
+The project created AUTO-101 to automate the stable guest add-to-cart behaviour discovered during exploratory testing.
+
+The automated test was added at:
+
+- **[Guest add-to-cart automated test](tests/cart/add-one-product.spec.ts)**
+
+The test verifies:
+
+- deterministic product selection
+- navigation to the selected product details
+- default quantity of one
+- successful product addition
+- header cart quantity update
+- correct product name, price and quantity in the cart
+- cart persistence after page refresh
+
+The automation was reviewed and merged through:
+
+- **[Pull Request #13 - Automate guest add-to-cart journey](https://github.com/Caitlyn-QA/real-world-qa-project/pull/13)**
+
+**Why:** The guest journey was selected because it provides valuable regression protection without introducing authentication complexity. The automation was based on confirmed requirements and completed exploratory testing rather than being written before the behaviour was understood.
+
+### Step 20 - Document the automation test
+
+The supporting guide was added at:
+
+- **[AUTO-101 guest cart automation test guide](docs/automation/AUTO-101-guest-cart-test-guide.md)**
+
+It explains:
+
+- the business risk covered by the test
+- the automated customer journey
+- locator and waiting decisions
+- how product data is captured and compared
+- how the test can be run and debugged
+- the agreed automation scope and exclusions
+
+The guide was reviewed and merged through:
+
+- **[Pull Request #14 - Add guest cart automation test guide](https://github.com/Caitlyn-QA/real-world-qa-project/pull/14)**
+
+**Why:** The test code shows what Playwright executes. The guide explains why the test was designed that way and how it connects to the earlier QA work.
+
+### Step 21 - Complete QA-101 and HT-101
+
+After the manual and automated evidence was complete:
+
+- QA-101 received a final completion review.
+- The final QA summary was added to HT-101.
+- All confirmed acceptance criteria were marked as passed.
+- No defects or blockers were recorded.
+- Remaining out-of-scope risks were communicated.
+- QA-101 and HT-101 moved to **Done** and were closed.
+
+**Why:** Completing a test or merging a pull request does not automatically complete a User Story. The final QA outcome must bring together the coverage, evidence, defects, remaining risk and completion recommendation.
+
 ## 4. Why the information lives in different places
 
 The project follows a one-source-of-truth principle:
@@ -336,17 +416,21 @@ A reviewer can follow this order:
 8. Read `docs/exploratory-testing/HT-101-cart-exploration.md` for the guest-customer session.
 9. Read `docs/exploratory-testing/HT-101-authenticated-cart-exploration.md` for the authenticated-customer session and direct comparison with the guest journey.
 10. Open Pull Requests #7 and #8 to see how the exploratory evidence was reviewed and merged.
-11. View the Harbour Tools QA Delivery Project to confirm that the live status matches the completed and remaining work.
+11. Open Pull Request #10 to see how the Playwright test foundation was introduced and reviewed.
+12. Read `tests/cart/add-one-product.spec.ts` to see the automated guest add-to-cart journey.
+13. Open Pull Request #13 to see the automation review and merge history.
+14. Read `docs/automation/AUTO-101-guest-cart-test-guide.md` to understand what the automated test proves and why its design decisions were made.
+15. Open Pull Request #14 to see the automation guide review and merge history.
+16. Open QA-101 and HT-101 to see the final QA summary, completed acceptance criteria and story outcome.
+17. View the Harbour Tools QA Delivery Project to confirm that Sprint 1 work is recorded as Done.
 
 The important question is not only, “Are there tests?” It is also:
 
-> Can I follow how the project was established, how the requirement became ready, what risks were identified, what the application actually did, how the evidence was reviewed and what work still remains?
-
----
+## Can I follow how the project was established, how the requirement became ready, what risks were identified, what the application actually did, how the evidence was reviewed and how the final QA outcome was reached?
 
 ## 7. The traceability chain for HT-101
 
-````text
+```text
 Customer need
 -> HT-101 User Story
 -> QA refinement questions
@@ -364,8 +448,18 @@ Customer need
 -> qa/QA-101-authenticated-cart-exploration branch
 -> Pull Request #8
 -> guest and authenticated behaviour compared
--> all confirmed acceptance criteria passed
--> automation planning next
+-> all confirmed acceptance criteria passed in exploratory testing
+-> AUTO-100 Playwright foundation
+-> Pull Request #10
+-> AUTO-101 guest add-to-cart automation
+-> Pull Request #13
+-> automation test guide
+-> Pull Request #14
+-> QA completion summary added to HT-101
+-> QA-101 completed
+-> HT-101 acceptance criteria confirmed
+-> HT-101 completed
+```
 
 This traceability is valuable because a reviewer can follow the work from the original customer need through requirement clarification, risk analysis, manual testing, review and the evidence supporting the current QA outcome.
 
@@ -385,7 +479,7 @@ The project is intended to demonstrate more than the ability to write Playwright
 - Communicating current status honestly
 - Choosing automation based on value rather than automating everything
 
-The Playwright implementation will be stronger because it will be based on an agreed requirement, known risks and real exploratory evidence.
+The Playwright implementation is based on an agreed requirement, known risks and exploratory evidence.
 
 ---
 
@@ -394,28 +488,22 @@ The Playwright implementation will be stronger because it will be based on an ag
 At the point documented in this guide:
 
 - Project foundations are complete.
-- HT-101 has passed refinement and Definition of Ready.
-- QA-101 is active.
-- The HT-101 test analysis has been reviewed and merged.
-- HT-101 and QA-101 correctly remain **In Progress**.
-- Exploratory testing is the next activity.
+- HT-101 passed refinement and Definition of Ready.
+- Risk-based test analysis was reviewed and merged.
+- Guest and authenticated exploratory testing was completed.
+- All confirmed acceptance criteria passed.
+- No defects or blockers were identified.
+- The Playwright test foundation was established.
+- The guest add-to-cart journey was automated.
+- Cart contents and refresh persistence were validated automatically.
+- The automation test guide was reviewed and merged.
+- QA-101 was completed and closed.
+- HT-101 received a final QA status and was completed.
+- Sprint 1 — Cart Reliability is complete.
 
-The next evidence should appear in this order:
+The repository now contains a complete traceability chain from the original business need through refinement, test analysis, exploratory testing, automation, review and final QA completion.
 
-```text
-Exploratory charter
--> manual session notes and observations
--> defects or requirement questions
--> retest evidence where needed
--> automation task and Playwright implementation
--> pull-request review and CI evidence
--> regression assessment
--> final QA summary
-````
-
-The project should not create all of these artifacts in advance. Each one should be added when the work genuinely reaches that stage.
-
----
+Future work can extend the project into additional cart risks or a new feature while preserving this completed Sprint 1 evidence.
 
 ## 10. Beginner glossary
 
