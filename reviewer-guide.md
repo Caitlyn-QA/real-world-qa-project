@@ -426,7 +426,7 @@ A reviewer can follow this order:
 
 The important question is not only, “Are there tests?” It is also:
 
-## Can I follow how the project was established, how the requirement became ready, what risks were identified, what the application actually did, how the evidence was reviewed and how the final QA outcome was reached?
+**Can I follow how the project was established, how the requirement became ready, what risks were identified, what the application actually did, how the evidence was reviewed and how the final QA outcome was reached?**
 
 ## 7. The traceability chain for HT-101
 
@@ -460,9 +460,6 @@ Customer need
 -> HT-101 acceptance criteria confirmed
 -> HT-101 completed
 ```
-
-This traceability is valuable because a reviewer can follow the work from the original customer need through requirement clarification, risk analysis, manual testing, review and the evidence supporting the current QA outcome.
-
 ## 8. What the project demonstrates about QA work
 
 The project is intended to demonstrate more than the ability to write Playwright syntax. It provides evidence of:
