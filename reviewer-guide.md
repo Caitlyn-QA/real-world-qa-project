@@ -1,9 +1,5 @@
 # How the Harbour Tools QA Project Works
 
-> **A beginner-friendly reviewer guide to the order, purpose and evidence behind a realistic company QA workflow**
-
-## About this guide
-
 This document explains how the **Harbour Tools QA Delivery** project is organised, what was created, in which order, and why each step exists in a real software company.
 
 The project is a **realistic QA delivery simulation**. Harbour Tools Ltd and the named team members are fictional. The repository, Issues, Project board, branches, commits, pull requests and test documentation are genuine project evidence created by me to practise and demonstrate professional QA work.
@@ -12,7 +8,12 @@ The goal is not to present a perfect finished project from the beginning. Eviden
 
 **Repository:** [Caitlyn-QA/real-world-qa-project](https://github.com/Caitlyn-QA/real-world-qa-project)
 
-> **Status: Sprint 1 complete — Cart Reliability validated through exploratory testing and Playwright automation**
+> **Status:** Sprint 1 complete — Core add-to-cart behaviour validated through exploratory testing and Playwright automation. Sprint Review and Sprint Reflection document the completed work, remaining scope and lessons that will shape Sprint 2.
+
+**Sprint Documentation**
+
+- [Sprint 1 Review](docs/reviews/sprint-1-review.md)
+- [Sprint 1 Reflection](docs/reflections/sprint-1-reflection.md)
 
 ---
 
@@ -28,24 +29,27 @@ Business need
 -> QA task and test analysis
 -> Branch, commit and pull request
 -> Review, revision and approval
--> Exploratory and functional testing
--> Defects, automation and regression evidence
--> QA completion summary
+-> Exploratory testing
+-> Automation
+-> Sprint Review
+-> Sprint Reflection
+-> Backlog refinement
 ```
 
 Each stage answers a different question:
 
-| Stage               | Main question                                                      |
-| ------------------- | ------------------------------------------------------------------ |
-| Business need       | Why does this feature matter?                                      |
-| User Story          | What should the customer be able to do?                            |
-| Refinement          | Is the expected behaviour clear enough?                            |
-| Definition of Ready | Can meaningful work begin without dangerous assumptions?           |
-| Test analysis       | What risks and behaviours need to be investigated?                 |
-| Testing             | What does the product actually do?                                 |
-| Defect reporting    | What failed, and what evidence proves it?                          |
-| Automation          | Which stable, valuable checks should run repeatedly?               |
-| QA completion       | What passed, what remains risky, and is the story ready to finish? |
+| Stage                  | Main question                                            |
+| ---------------------- | -------------------------------------------------------- |
+| Business need          | Why does this feature matter?                            |
+| User Story             | What should the customer be able to do?                  |
+| Refinement             | Is the expected behaviour clear enough?                  |
+| Definition of Ready    | Can meaningful work begin without dangerous assumptions? |
+| Test analysis          | What risks and behaviours need to be investigated?       |
+| Exploratory testing    | What does the product actually do?                       |
+| Automation             | Which stable, valuable checks should run repeatedly?     |
+| Sprint Review          | What was actually delivered?                             |
+| Sprint Reflection      | What did we learn and how can we improve?                |
+| Backlog refinement     | What should happen next?                                 |
 
 ---
 
@@ -357,14 +361,10 @@ The guide was reviewed and merged through:
 
 After the manual and automated evidence was complete:
 
-- QA-101 received a final completion review.
-- The final QA summary was added to HT-101.
-- All confirmed acceptance criteria were marked as passed.
-- No defects or blockers were recorded.
-- Remaining out-of-scope risks were communicated.
-- QA-101 and HT-101 moved to **Done** and were closed.
-
-**Why:** Completing a test or merging a pull request does not automatically complete a User Story. The final QA outcome must bring together the coverage, evidence, defects, remaining risk and completion recommendation.
+- QA-101 and HT-101 were reviewed against the completed work.
+- The core add-to-cart journey was successfully validated through exploratory testing and Playwright automation.
+- During the Sprint Review, it was recognised that broader cart-management behaviour remained outside the completed scope. These scenarios were identified for future backlog refinement rather than being treated as completed work.
+- Sprint 1 was therefore closed with the Sprint Review recording the sprint goal as partially achieved, providing an honest record of both the completed work and the remaining scope.
 
 ## 4. Why the information lives in different places
 
@@ -421,8 +421,11 @@ A reviewer can follow this order:
 13. Open Pull Request #13 to see the automation review and merge history.
 14. Read `docs/automation/AUTO-101-guest-cart-test-guide.md` to understand what the automated test proves and why its design decisions were made.
 15. Open Pull Request #14 to see the automation guide review and merge history.
-16. Open QA-101 and HT-101 to see the final QA summary, completed acceptance criteria and story outcome.
+16. Open QA-101 and HT-101 to see the final QA summary, completed acceptance criteria, remaining scope and story outcome.
 17. View the Harbour Tools QA Delivery Project to confirm that Sprint 1 work is recorded as Done.
+18. Read the Sprint 1 Review to understand what was delivered, what remained incomplete and how the sprint concluded.
+19. Read the Sprint 1 Reflection to understand the lessons learned and how they will shape Sprint 2.
+20. Review the Sprint 2 backlog to see how the Sprint Review and Sprint Reflection influenced the next iteration.
 
 The important question is not only, “Are there tests?” It is also:
 
@@ -498,9 +501,8 @@ At the point documented in this guide:
 - HT-101 received a final QA status and was completed.
 - Sprint 1 — Cart Reliability is complete.
 
-The repository now contains a complete traceability chain from the original business need through refinement, test analysis, exploratory testing, automation, review and final QA completion.
-
-Future work can extend the project into additional cart risks or a new feature while preserving this completed Sprint 1 evidence.
+The repository now contains a complete traceability chain for the core add-to-cart journey.
+Sprint 2 will continue by refining the product backlog, selecting the next sprint scope and expanding the QA workflow based on the outcomes of Sprint 1.
 
 ## 10. Beginner glossary
 
@@ -529,3 +531,5 @@ The project uses a simple professional principle:
 > **Every test should have a reason, every decision should have an owner, every result should have evidence, and the live status should match reality.**
 
 That is how the repository becomes more than a collection of test files. It becomes a visible record of how a QA Engineer contributes throughout software delivery.
+
+This repository is intentionally iterative. Rather than presenting a finished project from the beginning, it documents how software quality evolves through planning, testing, review, reflection and continuous improvement. Each sprint builds on the work, feedback and lessons of the previous one, reflecting how software quality evolves throughout a real development project.
