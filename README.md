@@ -93,7 +93,7 @@ Tools will be introduced when they are required by the work rather than added on
 
 Ensure that customers can add products to their cart and manage cart contents without losing items or seeing incorrect product, quantity or price information.
 
-Initial scope:
+**Sprint scope:**
 
 * Add one product to the cart
 * Add different products to the cart
@@ -102,18 +102,37 @@ Initial scope:
 * Establish the project workflow
 * Introduce automated CI checks
 
-## Current Stage
+## Current Status
 
-The project is currently in its setup and planning stage.
+Sprint 1 is complete.
 
-The next activities are:
+The repository currently includes:
 
-* Finalise the project working agreements
-* Create the initial product backlog
-* Set up the GitHub Project board
-* Refine the first user story
-* Begin Sprint 1 exploratory testing
+* Business requirements and project documentation
+* User story analysis
+* Test analysis
+* Exploratory testing
+* Playwright automation
+* Sprint 1 reflection
+
+Sprint 2 will build on the lessons learned during Sprint 1 by introducing a more complete QA workflow, including:
+
+* Bug reporting
+* Smoke testing
+* Regression testing
+* Additional automation
+* Process improvements based on Sprint 1 reflections
+
+## Sprint Reflections
+
+This project includes sprint reflections to document not only what was created, but also what was learned throughout the project.
+
+The Sprint 1 reflection explains what Sprint 1 focused on, what it did not yet include, and how those lessons will shape Sprint 2.
+
+* [Sprint 1 Reflection](docs/reflections/sprint-1-reflection.md)
 
 ## Project Development
 
-This repository will develop progressively. Documentation, automation, test evidence and project structure will be added as the simulated product team completes each sprint.
+This repository is designed to evolve through a series of realistic development sprints.
+
+Each sprint expands both the technical implementation and the QA process, documenting not only the deliverables, but also the decisions, lessons learned and continuous improvements that shape future work.
