@@ -98,13 +98,11 @@ Examples include:
 - Workflow
 - Definitions of Ready and Done
 - Sprint plans
+- Sprint reviews
+- Sprint reflections
 - Test analyses
 - Exploratory-testing records
-- Release reports
-- Playwright tests
-- API collections
-- SQL investigations
-- CI configuration
+...
 
 Repository changes are tracked through Git history.
 
@@ -192,8 +190,9 @@ Important findings or decisions are summarised in the related Issue or pull requ
 | Review discussion        | Pull request                                | Records feedback before merge                 |
 | Automated test execution | GitHub Actions                              | Provides CI evidence                          |
 | Story QA result          | User Story Issue                            | Completes the requirement history             |
-| Sprint outcome           | Sprint review                               | Compares planned and completed work           |
-| Process learning         | Retrospective                               | Improves future delivery                      |
+| Sprint outcome           | Review document                             | Records delivery outcome and next steps       |
+| Sprint reflection        | Reflection document                         | Records lessons learned & future improvements |
+| Product backlog          | GitHub Project                              | Records future work |
 | Release recommendation   | Release report                              | Records the final risk assessment             |
 
 ---
@@ -556,49 +555,72 @@ Not ready for release
 Testing blocked
 ```
 
----
+## Recording Sprint Review
+
+After a sprint finishes, create a Sprint Review under:
+
+docs/reviews/
+
+The Sprint Review records:
+
+- Sprint goal
+- Sprint goal status
+- Completed work
+- Remaining work
+- Risks
+- Next steps
+
+Its purpose is to provide an objective record of what the sprint delivered.
+
+## Recording Sprint Reflection
+
+After the Sprint Review, create a Sprint Reflection under:
+
+docs/reflections/
+
+The Sprint Reflection records:
+
+- What went well
+- What was missing
+- Lessons learned
+- Process improvements
+- How those lessons will influence the next sprint
+
+Its purpose is to document learning and continuous improvement rather than delivery status.
 
 ## Recording Sprint Results
 
 Use:
 
-```text
-docs/sprints/<sprint-name>/sprint-review.md
-```
+docs/reviews/sprint-1-review.md
 
 The Sprint Review contains:
 
-- Sprint goal result
+- Sprint goal
+- Sprint goal status
 - Completed work
-- Carried-over work
+- Remaining work
 - Testing performed
 - Defects found
-- Automation added
-- CI status
+- Automation delivered
 - Remaining risk
-- QA recommendation
-
----
+- Next steps
 
 ## Recording Process Improvements
 
 Use:
 
-```text
-docs/sprints/<sprint-name>/retrospective.md
-```
+docs/reflections/sprint-1-reflection.md
 
-The Retrospective contains:
+The Sprint Reflection contains:
 
 - What went well
-- What was difficult
-- What was learned
-- What should change
-- Agreed improvement actions
+- What was missing
+- Lessons learned
+- Process improvements
+- How those lessons will influence the next sprint
 
-Do not use the Retrospective for product defects or test results.
-
----
+The Sprint Reflection complements the Sprint Review by focusing on learning rather than delivery status.
 
 ## Recording a Release Recommendation
 
