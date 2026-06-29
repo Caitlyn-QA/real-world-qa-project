@@ -1,7 +1,5 @@
 # Real-World QA Project
 
-**Status: In progress — Sprint 1 feature testing**
-
 ## Overview
 
 This is an evolving end-to-end QA project designed to simulate how a QA Engineer works within a real software development team.
@@ -11,8 +9,6 @@ Instead of practising testing tools through isolated exercises, this project fol
 The project will grow through a series of two-week sprints.
 
 ## Start Here
-
-New to company-style QA delivery?
 
 Read the [Project Reviewer Guide](reviewer-guide.md) for a beginner-friendly walkthrough of what was created, in which order, and why each part exists in a realistic software delivery process.
 
